@@ -1,0 +1,9 @@
+{% extends "SQL/layout.html" %}
+{% load static %}
+
+
+{% block body %}
+    {% for tutorial in tutorials %}
+        {{ tutorial.content }}
+    {% endfor %}
+{% endblock %}
