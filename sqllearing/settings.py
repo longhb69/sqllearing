@@ -32,8 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "SQL",
-    "django_markdown2",
-    "markdownx",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

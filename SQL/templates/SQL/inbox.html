@@ -3,7 +3,26 @@
 
 
 {% block body %}
-    {% for tutorial in tutorials %}
-        {{ tutorial.content }}
-    {% endfor %}
+    <header>
+        <ul>
+            
+        </ul>
+    </header>
+    <nav id="navbar">
+        <ul>
+            <header>
+                SQL Tutorial
+            </header>
+            {% for tutorial in tutorials %}
+                <li>
+                <a href="{% url 'entry' title=tutorial.title %}"> {{ tutorial.title }} </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section">
+            {{content.content|safe}}
+        </section>
+    </main>
 {% endblock %}
