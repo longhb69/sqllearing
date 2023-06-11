@@ -22,7 +22,9 @@
     </nav>
     <main id="main-doc">
         <section class="main-section">
-            {{content.content|safe}}
+            {% autoescape off %}
+            {{content}}
+            {% endautoescape %}
         </section>
     </main>
 {% endblock %}

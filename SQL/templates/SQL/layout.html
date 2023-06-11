@@ -5,9 +5,14 @@
     <head>
         <title>{% block title %}SQL{% endblock %} </title>
         <link rel="stylesheet" href="{% static 'SQL/styles.css' %}">
+
     </head>
     <body>
         {% block body %}
         {% endblock %}
     </body>
 </html>
+
+{% block script %}
+    <script src="{% static 'SQL/inbox.js' %}"></script>
+{% endblock %}
