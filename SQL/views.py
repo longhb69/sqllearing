@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import SQLTutorial, Database
+from .models import SQLTutorial, Customers
 from django.db import connection
 from django.http import JsonResponse
 import json
@@ -28,12 +28,14 @@ def entry(request, title):
         "content": rendered_content
     })
 
-def tryit(request):
-    return render(request, "SQL/test.html")
+def tryit(request, statement):
+    print(statement)
+    return render(request, "SQL/tryit.html", {
+        "statement": statement
+    })
 
 @csrf_exempt
 def query(request, query):
-    print(query)
     cursor = connection.cursor()
     cursor.execute(query)
     r = cursor.fetchall()

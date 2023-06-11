@@ -11,14 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             const columns = data.columns;
             const records = JSON.parse(data.data);
-          
-            for (let i = 0; i < columns.length; i++) {
-              const column = columns[i];
-              console.log(column);
-            }
-
             const container = document.querySelector("#table-container")
             deletetable()
+
             const table = document.createElement("table");
             table.classList.add("ws-table-all", "notranslate");
             table.id = "querytable"
@@ -53,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
             deletetable()
           });
     })
+
 });
 
 function deletetable() {

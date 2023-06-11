@@ -14,7 +14,7 @@ class SQLTutorial(models.Model):
     def __str__(self):
         return self.title
 
-class Database(models.Model):
+class Customers(models.Model):
     customerID = models.IntegerField(primary_key=True)
     customerName = models.CharField(max_length=50)
     contactName = models.CharField(max_length=30)
