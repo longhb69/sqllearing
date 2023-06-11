@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelector(".ws-btn").addEventListener('click', function() {
+        console.log(sql_statement);
         const query = document.getElementById("textareaCodeSQL").value;
         fetch(`/query/${query}`)
         .then(response => {
