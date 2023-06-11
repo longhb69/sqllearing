@@ -1,0 +1,157 @@
+<h1>SQL <span class="color_h1">SELECT DISTINCT</span> Statement</h1>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="sql_select.asp">&#10094; Previous</a>
+<a class="w3-right w3-btn" href="sql_where.asp">Next &#10095;</a>
+</div>
+<hr>
+
+<h2>The SQL SELECT DISTINCT Statement</h2>
+<p>The <code class="w3-codespan">SELECT DISTINCT</code> statement is used to return only distinct 
+(different) values.</p>
+<p>Inside a table, a column often contains many duplicate values; and sometimes you 
+only want to list the different (distinct) values.</p>
+
+<h3>SELECT DISTINCT Syntax</h3>
+<div class="w3-example">
+<div class="w3-code notranslate sqlHigh">
+ SELECT DISTINCT <em>column1</em>,<em> column2, ...</em><br>
+ FROM <em>table_name</em>;</div></div>
+<hr>
+
+<h2>Demo Database</h2>
+<p>Below is a selection from the "Customers" table in the Northwind sample 
+database:</p>
+<div class="w3-responsive">
+<table class="ws-table-all notranslate">
+  <tr>
+    <th>CustomerID</th>
+    <th>CustomerName</th>
+    <th>ContactName</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>PostalCode</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>1<br><br></td>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Obere Str. 57</td>
+    <td>Berlin</td>
+    <td>12209</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Ana Trujillo Emparedados y helados</td>
+    <td>Ana Trujillo</td>
+    <td>Avda. de la Constitución 2222</td>
+    <td>México D.F.</td>
+    <td>05021</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Antonio Moreno Taquería</td>
+    <td>Antonio Moreno</td>
+    <td>Mataderos 2312</td>
+    <td>México D.F.</td>
+    <td>05023</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>4<br><br></td>
+    <td>Around the Horn</td>
+    <td>Thomas Hardy</td>
+    <td>120 Hanover Sq.</td>
+    <td>London</td>
+    <td>WA1 1DP</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Berglunds snabbköp</td>
+    <td>Christina Berglund</td>
+    <td>Berguvsvägen 8</td>
+    <td>Luleå</td>
+    <td>S-958 22</td>
+    <td>Sweden</td>
+  </tr>
+</table>
+</div>
+<hr>
+<h2>SELECT Example Without DISTINCT</h2>
+<p>The following SQL statement selects all (including the duplicates) values from the "Country" column in the "Customers" table:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate sqlHigh">
+SELECT Country FROM Customers;
+</div>
+<a target="_blank" href="{% url 'tryit' statement='SELECT Country FROM SQL_Customers'%}" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+<p>Now, let us use the <code class="w3-codespan">SELECT DISTINCT</code> statement and see the result.</p>
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+<!-- <p class="adtext">Advertisement</p> -->
+
+  <div id="adngin-mid_content-0"></div>
+  
+</div>
+<hr>
+
+<h2>SELECT DISTINCT Examples</h2>
+<p>The following SQL statement selects only the DISTINCT values from the "Country" column in the "Customers" table:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate sqlHigh">
+    <span class="sqlkeywordcolor" style="color:mediumblue">SELECT</span> DISTINCT Country <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> Customers;
+</div>
+<a target="_blank" href="{% url 'tryit' statement='SELECT DISTINCT Country FROM SQL_Customers'%}"  class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+
+<p>The following SQL statement lists the number of different (distinct) customer countries:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate sqlHigh">
+  SELECT COUNT(DISTINCT Country) FROM Customers;
+</div>
+<a target="_blank" href="{% url 'tryit' statement='SELECT COUNT(DISTINCT Country) FROM SQL_Customers'%}" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+
+<div class="w3-panel w3-note">
+<p><strong>Note: The example above will not work in Firefox!</strong> Because COUNT(DISTINCT <em>column_name</em>) is not supported in Microsoft Access databases. Firefox 
+is using Microsoft Access in our examples.</p>
+</div>
+
+<p>Here is the workaround for MS Access:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate sqlHigh">
+  SELECT Count(*) AS DistinctCountries<br>FROM (SELECT DISTINCT Country FROM Customers);
+</div>
+<a target="_blank" href="{% url 'tryit' statement='SELECT Count(*) AS DistinctCountries FROM (SELECT DISTINCT Country FROM Customers)'%}" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<form autocomplete="off" id="w3-exerciseform" action="exercise.asp?filename=exercise_select3" method="post" target="_blank">
+<h2>Test Yourself With Exercises</h2>
+<div class="exercisewindow">
+<h2>Exercise:</h2>
+<p>Select all the different values from the <code class="w3-codespan">Country</code> column in the <code class="w3-codespan">Customers</code> table.</p>
+<div class="exerciseprecontainer">
+<pre>
+<input name="ex1" maxlength="6" style="width: 64px;"> <input name="ex2" maxlength="8" style="width: 85px;"> Country <br class="phonebr">FROM Customers;
+</pre>
+</div>
+<br>
+<button type="submit" class="w3-btn w3-margin-bottom">Submit Answer &raquo;</button>
+<p><a target="_blank" href="exercise.asp?filename=exercise_select3">Start the Exercise</a></p>
+</div>
+</form>
+
+<br>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="sql_select.asp">&#10094; Previous</a>
+<a class="w3-right w3-btn" href="sql_where.asp">Next &#10095;</a>
+</div>
