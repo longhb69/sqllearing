@@ -1,5 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
+    sql_statement = "as";
+    document.querySelector(".w3-btn").addEventListener('click', function() {
+        //Try to Use local storage
+        sql_statement = document.querySelector('.w3-code').textContent;
+    });
+
     document.querySelector(".ws-btn").addEventListener('click', function() {
+        console.log(sql_statement);
         const query = document.getElementById("textareaCodeSQL").value;
         fetch(`/query/${query}`)
         .then(response => {
@@ -11,11 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             const columns = data.columns;
             const records = JSON.parse(data.data);
-          
-            for (let i = 0; i < columns.length; i++) {
-              const column = columns[i];
-              console.log(column);
-            }
 
             const container = document.querySelector("#table-container")
             deletetable()
