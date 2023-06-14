@@ -288,3 +288,9 @@ input[type=button] {
     transition: background-color 150ms ease-in,
     box-shadow 150ms ease-in;
 }
+select {
+    width: 150px;
+    padding: 0.3rem;
+    margin-top: 1px;
+    margin-bottom: 20px;
+}
