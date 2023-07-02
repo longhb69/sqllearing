@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
+from django.db import IntegrityError
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .models import SQLTutorial, Customers
 from django.db import connection
@@ -8,6 +11,7 @@ import json
 from django.core.serializers import serialize
 from django.views.decorators.csrf import csrf_exempt
 from django.template import Template, Context
+from .models import User
 
 # Create your views here.
 def index(request):
@@ -44,3 +48,43 @@ def query(request, query):
     data = {'columns': columns, 'data':serialized_data}
     return JsonResponse(data, safe=False)
     
+def login_view(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request,user)
+            return HttpResponseRedirect(reverse("index"))
+        else:
+            return render(request, "SQL/login.html", {
+                "message": "Invalid username and/or password."
+            })
+    else:
+        return render(request, "SQL/login.html")
+    
+def register(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        email = request.POST["email"]
+        password = request.POST["password"]
+        phone = request.POST["phonenumber"]
+        country = request.POST["countries"]
+
+        try:
+            user = User.objects.create_user(username=username,email=email,password=password)
+            user.phone = phone
+            user.country = country
+            user.save()
+        except IntegrityError:
+            return render(request, "SQL/signup.html", {
+                "message": "Username already taken."
+            })
+        return render(request, "SQL/login.html")
+    else:
+        return render(request, "SQL/signup.html")
+        
+def logout_view(request):
+    logout(request)
+    return render(request, "SQL/login.html")

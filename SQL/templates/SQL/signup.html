@@ -1,27 +1,29 @@
+{% load static %}
 <head>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{% static 'SQL/styles.css' %}">
 </head>
 <body>
 <div id="signup-body">
   <div class="box">
-    <form id="signup-form">
+    <form id="signup-form" action="{% url 'register' %}" method="post">
+        {% csrf_token %}
         <h3 class="form-text">Get started for Free</h3>
         <label for="email">Email</label>
         <input type="email" id="email" name="email">
         <label for="password">Password</label>
         <input type="password" id="password" name="password">
-        <label for="password">UserName</label>
+        <label for="username">UserName</label>
         <input type="text" id="username" name="username">
         <label for="phonenumber">Phone</label>
         <input type="text" id="phonenumber" name="phonenumber">
         <label for="countries">Country</label>
-        <select id="countries">
+        <select id="countries" name="countries">
           <option value="vietnam">Viet Nam</option>
           <option value="usa">United States</option>
         </select>
         <input type="submit" value="Sign Up">
     </form>
-    <p>Already have an account? <a class="login-link" href="https://www.google.com/">Log in</a></p>
+    <p>Already have an account? <a class="login-link" href="{% url 'login' %}">Log in</a></p>
   </div>
 </div>
 </body>

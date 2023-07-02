@@ -14,8 +14,8 @@ only want to list the different (distinct) values.</p>
 <h3>SELECT DISTINCT Syntax</h3>
 <div class="w3-example">
 <div class="w3-code notranslate sqlHigh">
- SELECT DISTINCT <em>column1</em>,<em> column2, ...</em><br>
- FROM <em>table_name</em>;</div></div>
+  <span class="sqlkeywordcolor" style="color:mediumblue"> SELECT DISTINCT</span> <em>column1</em>,<em> column2, ...</em><br>
+  <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> <em>table_name</em>;</div></div>
 <hr>
 
 <h2>Demo Database</h2>
@@ -85,7 +85,7 @@ database:</p>
 <div class="w3-example">
 <h3>Example</h3>
 <div class="w3-code notranslate sqlHigh">
-SELECT Country FROM Customers;
+  <span class="sqlkeywordcolor" style="color:mediumblue">SELECT</span> Country <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> Customers;
 </div>
 <a target="_blank" href="{% url 'tryit' statement='SELECT Country FROM SQL_Customers'%}" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
 </div>
@@ -114,7 +114,7 @@ SELECT Country FROM Customers;
 <div class="w3-example">
 <h3>Example</h3>
 <div class="w3-code notranslate sqlHigh">
-  SELECT COUNT(DISTINCT Country) FROM Customers;
+  <span class="sqlkeywordcolor" style="color:mediumblue">SELECT COUNT(DISTINCT</span> Country) <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> Customers;
 </div>
 <a target="_blank" href="{% url 'tryit' statement='SELECT COUNT(DISTINCT Country) FROM SQL_Customers'%}" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
 </div>

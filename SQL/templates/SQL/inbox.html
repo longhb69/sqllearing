@@ -4,9 +4,17 @@
 
 {% block body %}
     <header>
-        <ul>
-            
-        </ul>
+        <nav id="navbar-head">
+            <ul>
+                {% if user.is_authenticated%}
+                    <li class="welcome">Welcome, {{user.username}}</li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'register' %}">Sign Up</a></li>
+                    <li><a href="{% url 'login' %}">Log in</a></li>
+                {% endif %}
+            </ul>
+        </nav>
     </header>
     <nav id="navbar">
         <ul>
