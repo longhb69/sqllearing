@@ -1,12 +1,14 @@
-{% extends "SQL/layout.html" %}
 {% load static %}
-{% block body %}
+<head>
+  <link rel="stylesheet" href="{% static 'SQL/styles.css' %}">
+</head>
 <body>
     {% if message %}
       <h1>{{message}}</h1>
     {% endif %}
     <div id="signup-body">
         <div class="box">
+          {% csrf_token %}
           <form id="signup-form" action="{% url 'login' %}" method="post">
               {% csrf_token %}
               <h3 class="form-text">Log in to SQL learning</h3>
@@ -20,4 +22,3 @@
         </div>
       </div>
 </body>
-{% endblock %}

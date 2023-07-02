@@ -1,7 +1,11 @@
-{% extends "SQL/layout.html" %}
 {% load static %}
 
-{% block body %}
+<head>
+  <link rel="stylesheet" href="{% static 'SQL/styles.css' %}">
+  <script src="{% static 'SQL/inbox.js' %}"></script> 
+
+</head>
+<body>
 <div class="w3-container">
     <div class="w3-row">
       <div class="w3-col l10">
@@ -83,4 +87,4 @@
     </tbody>
   </table> -->
 </div>
-{% endblock %}
+</body>

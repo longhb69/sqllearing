@@ -15,9 +15,14 @@ from .models import User
 
 # Create your views here.
 def index(request):
+    tutorial = SQLTutorial.objects.get(title="SQL Home")  
+    content = tutorial.content
+    template = Template(content)
+    context = Context({})
+    rendered_content = template.render(context)
     return render(request, "SQL/inbox.html" , {
         "tutorials": SQLTutorial.objects.all(),
-        "content": SQLTutorial.objects.all()
+        "content": rendered_content,
     })
 
 def entry(request, title):
@@ -29,7 +34,8 @@ def entry(request, title):
 
     return render(request, "SQL/inbox.html", {
         "tutorials": SQLTutorial.objects.all(),
-        "content": rendered_content
+        "content": rendered_content,
+        "tutorial_title": tutorial.title
     })
 
 def tryit(request, statement):
@@ -37,6 +43,13 @@ def tryit(request, statement):
     return render(request, "SQL/tryit.html", {
         "statement": statement
     })
+
+def answer(request, title):
+    tutorial = SQLTutorial.objects.get(title=title)  
+    answer = tutorial.qizanswer
+    return JsonResponse(answer, safe=False)
+
+
 
 @csrf_exempt
 def query(request, query):

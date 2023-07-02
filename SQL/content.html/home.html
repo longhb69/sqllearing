@@ -1,0 +1,45 @@
+<h1>SQL <span class="color_h1">Tutorial</span></h1>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="/default.asp">&#10094; Home</a>
+<a class="w3-right w3-btn" href="sql_intro.asp">Next &#10095;</a>
+</div>
+
+<div class="w3-panel w3-info intro">
+<p>SQL is a standard language for storing, manipulating and retrieving data 
+in databases.</p>
+<p>Our SQL tutorial will teach you how to use SQL in:
+MySQL, SQL Server, MS Access, Oracle, Sybase, Informix, Postgres, and other database systems.</p>
+<a class="w3-btn w3-margin-bottom"  href="sql_intro.asp" style="font-size: 18px;padding-left:25px;padding-right:25px;font-family: 'Source Sans Pro', sans-serif;margin-top:6px;">Start learning SQL now &raquo;</a>
+</div>
+<hr>
+
+<h2>Examples in Each Chapter</h2>
+<p>With our online SQL editor, you can edit the SQL statements, and click on a button to view the result.</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate sqlHigh">
+SELECT * FROM Customers;
+</div>
+<a target="_blank" href="trysql.asp?filename=trysql_select_all" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+<p>Click on the &quot;Try it Yourself&quot; button to see how it works.</p>
+<hr>
+
+<h2>SQL Exercises</h2>
+<div id="w3-exerciseform">
+    {% csrf_token %}
+    <h2>Test Yourself With Exercises</h2>
+    <div class="exercisewindow">
+    <h2>Exercise:</h2>
+    <p>Insert the missing statement to get all the columns from the <code class="w3-codespan">Customers</code> table.</p>
+    <div class="exerciseprecontainer">
+    <pre>
+    <input name="ex1" maxlength="6" style="width: 64px;"> * FROM Customers;
+    </pre>
+    </div>
+    <br>
+    {% csrf_token %}
+    <button type="submit" id="submit-btn" class="w3-btn w3-margin-bottom" onclick="test('SQL Home')">Submit Answer &raquo;</button>
+    </div>
+</div>
+<hr>

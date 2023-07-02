@@ -4,7 +4,7 @@
 
 {% block body %}
     <header>
-        <nav id="navbar-head">
+        <!-- <nav id="navbar-head">
             <ul>
                 {% if user.is_authenticated%}
                     <li class="welcome">Welcome, {{user.username}}</li>
@@ -14,7 +14,26 @@
                     <li><a href="{% url 'login' %}">Log in</a></li>
                 {% endif %}
             </ul>
+        </nav>   -->
+        <nav class="navbarhead">
+            <div class="navbar-left">
+              <a class="logo" href="{% url 'index' %}">SQL Learning</a>
+            </div>
+            {% if user.is_authenticated%}
+                <div class="navbar-right">
+                    <p>Welcome, {{user.username}}</p>
+                    <a href="{% url 'logout' %}">Logout</a>
+                </div>
+            {% else %}
+                <div class="navbar-right">
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'register' %}">Signup</a>
+                </div>
+            {% endif %}
         </nav>
+
+        
+
     </header>
     <nav id="navbar">
         <ul>

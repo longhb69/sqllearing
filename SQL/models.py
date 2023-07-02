@@ -4,8 +4,8 @@ from django.db import models
 
 # Create your models here.
 class User(AbstractUser):
-    phone = models.CharField(max_length=100)
-    country = models.CharField(max_length=100, null=True,blank=True)
+    user_phone = models.CharField(max_length=100, null=True)
+    user_country = models.CharField(max_length=100, null=True,blank=True)
 
     def __str__(self):
         return f"{self.username}"
@@ -14,6 +14,7 @@ class User(AbstractUser):
 class SQLTutorial(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
+    qizanswer = models.CharField(max_length=200,null=True)
 
     def __str__(self):
         return self.title
@@ -26,3 +27,4 @@ class Customers(models.Model):
     city = models.CharField(max_length=100)
     postalCode = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
+
