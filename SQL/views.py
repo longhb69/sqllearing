@@ -84,11 +84,12 @@ def register(request):
         password = request.POST["password"]
         phone = request.POST["phonenumber"]
         country = request.POST["countries"]
-
+        print(100)
         try:
             user = User.objects.create_user(username=username,email=email,password=password)
-            user.phone = phone
-            user.country = country
+            user.user_phone = phone
+            user.user_country = country
+            print(100)
             user.save()
         except IntegrityError:
             return render(request, "SQL/signup.html", {
@@ -96,6 +97,7 @@ def register(request):
             })
         return render(request, "SQL/login.html")
     else:
+        print(200)
         return render(request, "SQL/signup.html")
         
 def logout_view(request):
