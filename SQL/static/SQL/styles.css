@@ -84,7 +84,7 @@ html {
 .navbarhead {
     position: fixed;
     z-index:1;
-    background-color: #303841;
+    background-color: #143c6c;
     height: 8vh;
     width: 100%;
     display: flex;
@@ -105,16 +105,21 @@ html {
     text-decoration: none;
     margin-left: 20px;
     padding: 10px;
-    background-color: red;
+    background-color: #034efd;
     border-radius: 3px;
+    font-weight: 500;
+    transition: background-color 150ms ease-in,
+    box-shadow 150ms ease-in;
   }
+
+  .navbarhead .navbar-right a:hover {
+    background-color: #329ffe;
+    font-weight: 600;
+}
   .navbarhead .navbar-right p {
     display: inline-block;
     font-size: 1.4rem;
     color: white
-  }
-  .navbarhead .navbar-right a:hover {
-    background-color: #45567d;
   }
   
   .navbarhead .navbar-right a:last-child {
@@ -123,7 +128,7 @@ html {
 
 a {
     text-decoration: none;
-    color: #F1ECE4;
+    color: black;
 }
 
 
@@ -170,9 +175,9 @@ h3 {
 }
 
 .nextprev a.w3-right, .nextprev a.w3-left {
-    background-color: #04AA6D;
+    background-color: #034efd;
     color: #ffffff;
-    border-color: #04AA6D;
+    border-color: 034efd;
 }
 
 .nextprev a {
@@ -224,9 +229,9 @@ table.w3-table-all,table.ws-table-all{margin:20px 0}
 }
 .sqlcolor{color:black}
 
-.w3-btn, .w3-btn:link, .w3-btn:visited {color:#FFFFFF;background-color:#4CAF50}
+.w3-btn, .w3-btn:link, .w3-btn:visited {color:#FFFFFF;background-color: #fdfa00}
 .w3-example .w3-btn, .w3-example .ws-btn {
-    background-color:#f99400!important;
+    background-color:#f9f900!important;
     border-radius:5px;
     font-size: 17px;
     font-family: 'Source Sans Pro', sans-serif;
@@ -460,15 +465,15 @@ select {
     
 }
 #w3-exerciseform .w3-btn {
-    background-color: #04AA6D;
+    background-color: #f9f900;
     border-radius: 5px;
     font-size: 17px;
     font-family: 'Source Sans Pro', sans-serif;
     padding: 7px 18px;
 }
 .w3-btn, .w3-btn:link, .w3-btn:visited {
-    color: #FFFFFF;
-    background-color: #4CAF50;
+    color: black;
+    background-color: #fff000;
 }
 .w3-margin-bottom {
     margin-bottom: 16px!important;
