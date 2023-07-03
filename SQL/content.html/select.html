@@ -1,0 +1,139 @@
+<h1>SQL <span class="color_h1">SELECT</span> Statement</h1>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="sql_syntax.asp">&#10094; Previous</a>
+<a class="w3-right w3-btn" href="sql_distinct.asp">Next &#10095;</a>
+</div>
+<hr>
+
+<h2>The SQL SELECT Statement</h2>
+<p>The <code class="w3-codespan">SELECT</code> statement is used to select data from a database.</p>
+<p>The data returned is stored in a result table, called the result-set.</p>
+<h3>SELECT Syntax</h3>
+<div class="w3-example">
+<div class="w3-code notranslate sqlHigh">
+    <span class="sqlkeywordcolor" style="color:mediumblue">SELECT</span> <em>column1</em>,<em> column2, ...</em><br>
+    <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> <em>table_name</em>;</div></div>
+<p>Here, column1, column2, ... are the field names of the table you want to 
+select data from. If you 
+want to select all the fields available in the table, use the following syntax:</p>
+<div class="w3-example">
+<div class="w3-code notranslate sqlHigh">
+    <span class="sqlkeywordcolor" style="color:mediumblue">SELECT</span> * <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> <em>table_name</em>;</div></div>
+<hr>
+
+<h2>Demo Database</h2>
+<p>Below is a selection from the "Customers" table in the Northwind sample database:</p>
+<div class="w3-responsive">
+<table class="ws-table-all notranslate">
+  <tr>
+    <th>CustomerID</th>
+    <th>CustomerName</th>
+    <th>ContactName</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>PostalCode</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>1<br><br></td>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Obere Str. 57</td>
+    <td>Berlin</td>
+    <td>12209</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Ana Trujillo Emparedados y helados</td>
+    <td>Ana Trujillo</td>
+    <td>Avda. de la Constitución 2222</td>
+    <td>México D.F.</td>
+    <td>05021</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Antonio Moreno Taquería</td>
+    <td>Antonio Moreno</td>
+    <td>Mataderos 2312</td>
+    <td>México D.F.</td>
+    <td>05023</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>4<br><br></td>
+    <td>Around the Horn</td>
+    <td>Thomas Hardy</td>
+    <td>120 Hanover Sq.</td>
+    <td>London</td>
+    <td>WA1 1DP</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Berglunds snabbköp</td>
+    <td>Christina Berglund</td>
+    <td>Berguvsvägen 8</td>
+    <td>Luleå</td>
+    <td>S-958 22</td>
+    <td>Sweden</td>
+  </tr>
+</table>
+</div>
+<hr>
+
+<h2>SELECT Column Example</h2>
+<p>The following SQL statement selects the "CustomerName" and "City" columns 
+from the "Customers" table:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate sqlHigh">
+    <span class="sqlkeywordcolor" style="color:mediumblue">SELECT</span> CustomerName, City <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> SQL_Customers;
+</div>
+<a target="_blank" href="{% url 'tryit' statement='SELECT CustomerName, City FROM SQL_Customers; '%}" class="w3-btn w3-margin-bottom">
+ Try it Yourself &raquo;</a>
+</div>
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+<!-- <p class="adtext">Advertisement</p> -->
+
+  <div id="adngin-mid_content-0"></div>
+  
+</div>
+<hr>
+<h2>SELECT * Example</h2>
+<p>The following SQL statement selects all the columns from the "Customers" 
+table:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate sqlHigh">
+    <span class="sqlkeywordcolor" style="color:mediumblue">SELECT</span> * <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> SQL_Customers;
+</div>
+<a target="_blank" href="{% url 'tryit' statement='SELECT * FROM SQL_Customers;'%}" class="w3-btn w3-margin-bottom">
+ Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<div autocomplete="off" id="w3-exerciseform" action="exercise.asp?filename=exercise_select1" method="post" target="_blank">
+    <h2>Test Yourself With Exercises</h2>
+    <div class="exercisewindow">
+    <h2>Exercise:</h2>
+    <p>Insert the missing statement to get all the columns from the <code class="w3-codespan">SQL_Customers</code> table.</p>
+    <div class="exerciseprecontainer">
+    <pre>
+    <input name="ex1" maxlength="6" style="width: 64px;"> * FROM SQL_Customers;
+    </pre>
+    </div>
+    <br>
+    <button type="submit" id="submit-btn" class="w3-btn w3-margin-bottom" onclick="test('SQL Select')">Submit Answer &raquo;</button>
+    </div>
+</div>
+
+<br>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="sql_syntax.asp">&#10094; Previous</a>
+<a class="w3-right w3-btn" href="sql_distinct.asp">Next &#10095;</a>
+</div>

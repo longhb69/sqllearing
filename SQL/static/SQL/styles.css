@@ -133,6 +133,11 @@ a {
     top: 100px;
     margin-left: 270px;
     padding: 20px;
+    width: 65%;
+}
+
+hr {
+    margin: 20px -16px;
 }
 
 hr {
@@ -143,6 +148,10 @@ body {
     font-family: "Segoe UI",Arial,sans-serif;
     font-weight: 400;
 }
+h1 {
+    font-size: 42px;
+}
+
 h1, h2,h3,h4,h5 {
     font-family: "Segoe UI",Arial,sans-serif;
     font-weight: 400;
@@ -159,6 +168,31 @@ h2 {
 h3 {
     font-size: 24px;
 }
+
+.nextprev a.w3-right, .nextprev a.w3-left {
+    background-color: #04AA6D;
+    color: #ffffff;
+    border-color: #04AA6D;
+}
+
+.nextprev a {
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-left: 19px;
+    padding-right: 19px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+.w3-right {
+    float: right!important;
+}
+a:active, a:hover {
+    outline-width: 0;
+}
+.w3-left {
+    float: left!important;
+}
+
 .w3-codespan {
     font-size:105%;
     background-color:rgba(222,222,222,0.3);
@@ -183,7 +217,11 @@ table.w3-table-all,table.ws-table-all{margin:20px 0}
 .w3-code{border-left:4px solid #ff9800;}  
 .w3-section,.w3-code{margin-top:16px!important;margin-bottom:16px!important}
 .w3-code{width:auto;background-color:#fff;color:#000;padding:8px 12px;border-left:4px solid #ff9800;word-wrap:break-word}
-.sqlkeywordcolor{color:mediumblue}
+.sqlkeywordcolor{
+    margin-right: 4px;
+    margin-left: 3px;
+    color:mediumblue
+}
 .sqlcolor{color:black}
 
 .w3-btn, .w3-btn:link, .w3-btn:visited {color:#FFFFFF;background-color:#4CAF50}
