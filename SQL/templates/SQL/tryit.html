@@ -5,7 +5,15 @@
   <script src="{% static 'SQL/inbox.js' %}"></script> 
 
 </head>
-<body>
+<body id="tryit-body">
+  <div id="tryitLeaderboard" class="w3-white">
+    <!-- TryitLeaderboard -->
+    
+      <!--<pre>try_it_leaderboard, all: [320,50][728,90][468,60]</pre>-->
+      <div id="adngin-try_it_leaderboard-0"></div>
+      <!-- adspace tryit-->
+     
+    </div>
 <div class="w3-container">
     <div class="w3-row">
       <div class="w3-col l10">
@@ -25,10 +33,13 @@
         <h3>Result:</h3>
         <div id="resultSQL">
           <iframe id="iframeResultSQL" frameborder="0" name="view"></iframe>
+          <div style="padding:10px;">
           <div class="w3-white" id="divResultSQL">
+            <div style="padding:10px;">
                 <div id="table-container">
                 
                 </div>
+              </div>
             </div>
             <div style="margin:10px;margin-bottom:30px;">Click <b>"Run SQL"</b> to execute the SQL statement above.</div>
           </div>
@@ -37,7 +48,7 @@
           <h3 style="text-align:center;font-size:16px;">
     </h3>
       </div>
-      <div class="w3-col l2 w3-padding">
+      <!-- <div class="w3-col l2 w3-padding">
         <div id="dbInfo">
           <div style="font-size:16px;">Your Database:
             <table>
@@ -60,7 +71,7 @@
                     </tr>
                 </tbody>
             </table>
-          </div>
+          </div> -->
           <div>
             <div id="yourDB" style="margin-top:10px;margin-bottom:20px;"></div>
             <div id="yourRC" style="margin-top:10px;margin-bottom:20px;"></div>

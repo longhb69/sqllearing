@@ -260,6 +260,7 @@ table.w3-table-all,table.ws-table-all{margin:20px 0}
   #textareaCodeSQL {
     font-size:15px;
     font-family:Consolas,"courier new";
+    padding: 5px;
     height:140px;
     width:100%;
     border:1px solid #d3d3d3;

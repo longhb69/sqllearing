@@ -1,7 +1,7 @@
 <h1>SQL <span class="color_h1">SELECT DISTINCT</span> Statement</h1>
 <div class="w3-clear nextprev">
-<a class="w3-left w3-btn" href="sql_select.asp">&#10094; Previous</a>
-<a class="w3-right w3-btn" href="sql_where.asp">Next &#10095;</a>
+  <a class="w3-left w3-btn" href="{% url 'entry' title='SQL Select' %}">&#10094; Previous</a>
+  <a class="w3-right w3-btn" href="{% url 'entry' title='SQL Where' %}">Next &#10095;</a>
 </div>
 <hr>
 
@@ -85,7 +85,7 @@ database:</p>
 <div class="w3-example">
 <h3>Example</h3>
 <div class="w3-code notranslate sqlHigh">
-  <span class="sqlkeywordcolor" style="color:mediumblue">SELECT</span> Country <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> Customers;
+  <span class="sqlkeywordcolor" style="color:mediumblue">SELECT</span> Country <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> SQL_Customers;
 </div>
 <a target="_blank" href="{% url 'tryit' statement='SELECT Country FROM SQL_Customers'%}" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
 </div>
@@ -105,7 +105,7 @@ database:</p>
 <div class="w3-example">
 <h3>Example</h3>
 <div class="w3-code notranslate sqlHigh">
-    <span class="sqlkeywordcolor" style="color:mediumblue">SELECT</span> DISTINCT Country <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> Customers;
+    <span class="sqlkeywordcolor" style="color:mediumblue">SELECT</span> <span class="sqlkeywordcolor" style="color:mediumblue">DISTINCT</span> Country <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> SQL_Customers;
 </div>
 <a target="_blank" href="{% url 'tryit' statement='SELECT DISTINCT Country FROM SQL_Customers'%}"  class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
 </div>
@@ -114,7 +114,7 @@ database:</p>
 <div class="w3-example">
 <h3>Example</h3>
 <div class="w3-code notranslate sqlHigh">
-  <span class="sqlkeywordcolor" style="color:mediumblue">SELECT COUNT(DISTINCT</span> Country) <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> Customers;
+  <span class="sqlkeywordcolor" style="color:mediumblue">SELECT COUNT(DISTINCT</span> Country) <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> SQL_Customers;
 </div>
 <a target="_blank" href="{% url 'tryit' statement='SELECT COUNT(DISTINCT Country) FROM SQL_Customers'%}" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
 </div>
@@ -128,9 +128,9 @@ is using Microsoft Access in our examples.</p>
 <div class="w3-example">
 <h3>Example</h3>
 <div class="w3-code notranslate sqlHigh">
-  SELECT Count(*) AS DistinctCountries<br>FROM (SELECT DISTINCT Country FROM Customers);
+  <span class="sqlkeywordcolor" style="color:mediumblue">SELECT Count</span> (*) <span class="sqlkeywordcolor" style="color:mediumblue">AS</span> DistinctCountries<br><span class="sqlkeywordcolor" style="color:mediumblue">FROM (SELECT DISTINCT</span> Country <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span> SQL_Customers);
 </div>
-<a target="_blank" href="{% url 'tryit' statement='SELECT Count(*) AS DistinctCountries FROM (SELECT DISTINCT Country FROM Customers)'%}" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+<a target="_blank" href="{% url 'tryit' statement='SELECT Count(*) AS DistinctCountries FROM (SELECT DISTINCT Country FROM SQL_Customers)'%}" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
 </div>
 <hr>
 
@@ -152,6 +152,6 @@ is using Microsoft Access in our examples.</p>
 
 <br>
 <div class="w3-clear nextprev">
-<a class="w3-left w3-btn" href="sql_select.asp">&#10094; Previous</a>
-<a class="w3-right w3-btn" href="sql_where.asp">Next &#10095;</a>
+<a class="w3-left w3-btn" href="{% url 'entry' title='SQL Select' %}">&#10094; Previous</a>
+<a class="w3-right w3-btn" href="{% url 'entry' title='SQL Where' %}">Next &#10095;</a>
 </div>

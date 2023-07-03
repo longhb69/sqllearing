@@ -56,7 +56,7 @@ def query(request, query):
     cursor = connection.cursor()
     cursor.execute(query)
     r = cursor.fetchall()
-    columns = [desc[0] for desc in cursor.description]
+    columns = [desc[0].capitalize() for desc in cursor.description]
     serialized_data = json.dumps(r)
     data = {'columns': columns, 'data':serialized_data}
     return JsonResponse(data, safe=False)
