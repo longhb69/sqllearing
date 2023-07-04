@@ -1,0 +1,211 @@
+<h1>SQL <span class="color_h1">WHERE</span> Clause</h1>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="{% url 'entry' title='SQL Select Distinct' %}">&#10094; Previous</a>
+<a class="w3-right w3-btn" href="{% url 'entry' title='SQL And, Or, Not' %}">Next &#10095;</a>
+</div>
+<hr>
+<h2>The SQL WHERE Clause</h2>
+<p>The <code class="w3-codespan">WHERE</code> clause is used to filter records.</p>
+<p>It is used to extract only those records that fulfill a specified 
+condition.</p>
+
+<h3>WHERE Syntax</h3>
+<div class="w3-example">
+<div class="w3-code notranslate sqlHigh">
+    <span class="sqlkeywordcolor" style="color:mediumblue">SELECT</span>  <em>column1</em>,<em> column2, ...</em><br>
+    <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span>  <em>table_name</em><br>
+    <span class="sqlkeywordcolor" style="color:mediumblue">WHERE</span>  <em>condition</em>;</div></div>
+
+<div class="w3-panel w3-note">
+<p><strong>Note:</strong> The <code class="w3-codespan">WHERE</code> clause is not only used in <code class="w3-codespan">
+SELECT</code> statements, it is also used in <code class="w3-codespan">UPDATE</code>,
+<code class="w3-codespan">DELETE</code>, etc.!</p>
+</div>
+<hr>
+
+<h2>Demo Database</h2>
+<p>Below is a selection from the "Customers" table in the Northwind sample database:</p>
+<div class="w3-responsive">
+<table class="ws-table-all notranslate">
+  <tr>
+    <th>CustomerID</th>
+    <th>CustomerName</th>
+    <th>ContactName</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>PostalCode</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>1<br><br></td>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Obere Str. 57</td>
+    <td>Berlin</td>
+    <td>12209</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Ana Trujillo Emparedados y helados</td>
+    <td>Ana Trujillo</td>
+    <td>Avda. de la Constitución 2222</td>
+    <td>México D.F.</td>
+    <td>05021</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Antonio Moreno Taquería</td>
+    <td>Antonio Moreno</td>
+    <td>Mataderos 2312</td>
+    <td>México D.F.</td>
+    <td>05023</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>4<br><br></td>
+    <td>Around the Horn</td>
+    <td>Thomas Hardy</td>
+    <td>120 Hanover Sq.</td>
+    <td>London</td>
+    <td>WA1 1DP</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Berglunds snabbköp</td>
+    <td>Christina Berglund</td>
+    <td>Berguvsvägen 8</td>
+    <td>Luleå</td>
+    <td>S-958 22</td>
+    <td>Sweden</td>
+  </tr>
+</table>
+</div>
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+<!-- <p class="adtext">Advertisement</p> -->
+
+  <div id="adngin-mid_content-0"></div>
+  
+</div>
+<hr>
+<h2>WHERE Clause Example</h2>
+<p>The following SQL statement selects all the customers from the country 
+"Mexico", in the "Customers" table:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate sqlHigh">
+    <span class="sqlkeywordcolor" style="color:mediumblue">SELECT</span>  * <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span>  SQL_Customers<br>
+    <span class="sqlkeywordcolor" style="color:mediumblue">WHERE</span>  Country='Mexico';</div>
+<a target="_blank" href="{% url 'tryit' statement='SELECT * FROM SQL_Customers WHERE Country=`Mexico`; '%}" class="w3-btn w3-margin-bottom">
+Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Text Fields vs. Numeric Fields</h2>
+<p>SQL requires single quotes around text values (most database systems will 
+also allow double quotes).</p>
+<p>However, numeric fields should not be enclosed in quotes:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate sqlHigh">
+    <span class="sqlkeywordcolor" style="color:mediumblue">SELECT</span>  * <span class="sqlkeywordcolor" style="color:mediumblue">FROM</span>  SQL_Customers<br>
+    <span class="sqlkeywordcolor" style="color:mediumblue">WHERE</span>  CustomerID=1;</div>
+<a target="_blank" href="{% url 'tryit' statement='SELECT * FROM SQL_Customers WHERE CustomerID=1;'%}" class="w3-btn w3-margin-bottom">
+ Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Operators in The WHERE Clause</h2>
+<p>The following operators can be used in the <code class="w3-codespan">WHERE</code> clause:</p>
+<table class="ws-table-all notranslate">
+  <tr>
+    <th style="width:20%">Operator</th>
+    <th style="width:70%">Description</th>
+    <th style="width:10%">Example</th>
+  </tr>
+  <tr>
+    <td>=</td>
+    <td>Equal</td>
+    <td><a target="_blank" class="w3-btn btnsmall" href="{% url 'tryit' statement='SELECT * FROM SQL_Customers WHERE Price = 18;'%}">Try it</a></td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>Greater than</td>
+  <td><a target="_blank" class="w3-btn btnsmall" href="trysql.asp?filename=trysql_op_greater_than">Try it</a></td>
+  </tr>
+  <tr>
+    <td>&lt;</td>
+    <td>Less than</td>
+  <td><a target="_blank" class="w3-btn btnsmall" href="trysql.asp?filename=trysql_op_less_than">Try it</a></td>
+  </tr>
+  <tr>
+    <td>&gt;=</td>
+    <td>Greater than or equal</td>
+  <td><a target="_blank" class="w3-btn btnsmall" href="trysql.asp?filename=trysql_op_greater_than2">Try it</a></td>
+  </tr>
+  <tr>
+    <td>&lt;=</td>
+    <td>Less than or equal</td>
+  <td><a target="_blank" class="w3-btn btnsmall" href="trysql.asp?filename=trysql_op_less_than2">Try it</a></td>
+  </tr>
+  <tr>
+    <td>&lt;&gt;</td>
+    <td>Not equal. <b>Note:</b> In some versions of SQL this operator may be written as !=</td>
+  <td><a target="_blank" class="w3-btn btnsmall" href="trysql.asp?filename=trysql_op_not_equal_to">Try it</a></td>
+  </tr>
+  <tr>
+    <td>BETWEEN</td>
+    <td>Between a certain range</td>
+  <td><a target="_blank" class="w3-btn btnsmall" href="trysql.asp?filename=trysql_op_between">Try it</a></td>
+  </tr>
+  <tr>
+    <td>LIKE</td>
+    <td>Search for a pattern</td>
+  <td><a target="_blank" class="w3-btn btnsmall" href="trysql.asp?filename=trysql_op_like">Try it</a></td>
+  </tr>
+  <tr>
+    <td>IN</td>
+    <td>To specify multiple possible values for a column</td>
+  <td><a target="_blank" class="w3-btn btnsmall" href="trysql.asp?filename=trysql_op_in">Try it</a></td>
+  </tr>
+</table>
+<hr>
+
+<form autocomplete="off" id="w3-exerciseform" action="exercise.asp?filename=exercise_where1" method="post" target="_blank">
+<h2>Test Yourself With Exercises</h2>
+<div class="exercisewindow">
+<h2>Exercise:</h2>
+<p>Select all records where the <code class="w3-codespan">City</code> column has the value "Berlin".</p>
+<div class="exerciseprecontainer">
+<pre>
+SELECT * FROM SQL_Customers
+<input name="ex1" maxlength="5" style="width: 54px;"> <input name="ex2" maxlength="4" style="width: 43px;"> = <input name="ex3" maxlength="8" style="width: 85px;">;
+</pre>
+</div>
+<br>
+<button type="submit" id="submit-btn" class="w3-btn w3-margin-bottom" onclick="test('SQL Where')">Submit Answer &raquo;</button>
+</div>
+</form>
+
+<br>
+<div class="w3-clear nextprev">
+    <a class="w3-left w3-btn" href="{% url 'entry' title='SQL Select Distinct' %}">&#10094; Previous</a>
+    <a class="w3-right w3-btn" href="{% url 'entry' title='SQL And, Or, Not' %}">Next &#10095;</a>
+</div>
+<div id="mypagediv2" style="position:relative;text-align:center;margin-bottom:20px;clear:both;"></div>
+</div>
+
+<div class="w3-col l2 m12" id="right">
+
+<div class="sidesection">
+  <div id="skyscraper">
+  
+    <div id="adngin-sidebar_top-0"></div>
+  
+  </div>
+</div>
